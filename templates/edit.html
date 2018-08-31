@@ -1,0 +1,24 @@
+{% extends 'masterlayout.html' %}
+{% block content%}
+
+<div class="container">
+<br>
+<h2>Book List</h2>
+<hr>
+<form action="/update/{{ books.id }}">
+{% csrf_token %}
+
+	<label class="form-group" for="titile">Title:</label>
+	<input type="text" name="title" class="form-control" value="{{ books.title }}" placeholder="{{ books.title }}"><br>
+
+	<label class="form-group" for="price">Price:</label>
+	<input type="text" name="price" class="form-control" value="{{ books.price }}" placeholder="{{ books.price }}"><br>
+
+	<label class="form-group" for="author">Author:</label>
+	<input type="text" name="author" class="form-control" value="{{ books.author }}" placeholder="{{ books.author }}"><br>
+
+	<input class="btn btn-primary" type="submit" value="Update">
+	</form>
+	</div>
+
+{% endblock%}
